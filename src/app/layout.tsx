@@ -1,3 +1,4 @@
+import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { Provider } from "@/components/ui/provider"
 
@@ -12,6 +13,7 @@ export default function RootLayout({
         <Provider>
           <Header />
           {children}
+          <Footer />
         </Provider>
       </body>
     </html>
