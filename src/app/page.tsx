@@ -1,13 +1,50 @@
-import { Image as ChakraImage, HStack, Text, VStack } from "@chakra-ui/react";
+import { Image as ChakraImage, HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 import bannerFooter from "../../public/assets/bannerFooter.jpeg";
+import { FaFacebook, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 export default function Home() {
   return (
     <VStack as="main" gap={0} >
-      <VStack as="section" w="100%">
+      <VStack as="section" w="100%"gap={0}>
+        <HStack
+          w="100%"
+          h="190px"
+          pt="72px"
+          pb="64px"
+          justify="center"
+          align="center"
+          fontFamily="'HEINEKEN Core', sans-serif"
+          bg="rgb(32, 85, 39)"
+        >
+          <VStack
+            w="100%"
+            h="80px"
+            justify="center"
+            align="center"
+            flexDirection="row"
+            gap="40px"
+          >
+            <Text
+              color="white"
+              fontSize="40px"
+              fontWeight="700"
+              lineHeight="40px"
+              textAlign="center"
+            >
+              Aqui você fica por dentro de tudo o que fazemos
+            </Text>
+            <Icon boxSize="28px" color="white" cursor="pointer"><FaFacebook /></Icon>
+            <Icon boxSize="28px" color="white" cursor="pointer"><FaInstagram /></Icon>
+            <Icon boxSize="28px" color="white" cursor="pointer"><FaLinkedinIn /></Icon>
+            <Icon boxSize="28px" color="white" cursor="pointer"><FaYoutube /></Icon>
 
+          </VStack>
+        </HStack>
+      </VStack>
+
+      <VStack as="section" w="100%"gap={0}>
         {/* Penultimo Banner */}
         <HStack position="relative" w="100%" h="350px">
 
