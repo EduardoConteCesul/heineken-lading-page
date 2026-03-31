@@ -9,6 +9,7 @@ import hubCidadania from "../../public/assets/hub-cidadania.jpg";
 import mambaWater from "../../public/assets/mamba-water.jpg";
 import passosLink from "../../public/assets/passos_link.webp";
 import spin from "../../public/assets/spin.jpg";
+import { LuChevronUp } from "react-icons/lu";
 
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
@@ -71,8 +72,8 @@ export default function Home() {
               </VStack>
             </HStack>
 
-            <HStack border="1px solid red" w="16%" h="350px" position="relative">
-              <ChakraImage h="100%" w="16%" asChild>
+            <HStack w="16%" h="350px" position="relative">
+              <ChakraImage h="100%" asChild>
                 <NextImage
                   src={mambaWater}
                   alt="..."
@@ -112,8 +113,8 @@ export default function Home() {
                 </VStack>
               </HStack>
 
-              <HStack w="100%" h="155px" border="1px solid red" position="relative">
-                <ChakraImage h="155px" asChild>
+              <HStack w="100%" h="155px" position="relative">
+                <ChakraImage h="155px" w="100%" asChild>
                   <NextImage
                     src={passosLink}
                     alt="..."
@@ -207,6 +208,22 @@ export default function Home() {
           </HStack>
         </VStack>
       </VStack>
+      <Button
+        bg="#003802aa"
+        color="white"
+        fontWeight="bold"
+        h="55px"
+        w="155px"
+        position="fixed"
+        bottom="30px"
+        left="90px"
+        zIndex="9999"
+        rounded={0}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <LuChevronUp />
+        Voltar ao topo
+      </Button>
     </VStack>
   )
 }
