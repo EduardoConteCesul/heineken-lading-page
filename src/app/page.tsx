@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Image as ChakraImage, HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import { Button, Image as ChakraImage, HStack, Icon, Link as ChakraLink, Text, VStack, Box } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 import bannerFooter from "../../public/assets/bannerFooter.jpeg";
@@ -10,6 +10,7 @@ import mambaWater from "../../public/assets/mamba-water.jpg";
 import passosLink from "../../public/assets/passos_link.webp";
 import spin from "../../public/assets/spin.jpg";
 import { LuChevronUp } from "react-icons/lu";
+import NextLink from "next/link";
 
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
@@ -46,10 +47,29 @@ export default function Home() {
               >
                 Aqui você fica por dentro de tudo o que fazemos
               </Text>
-              <Icon boxSize="28px" color="white" cursor="pointer"><FaFacebook /></Icon>
-              <Icon boxSize="28px" color="white" cursor="pointer"><FaInstagram /></Icon>
-              <Icon boxSize="28px" color="white" cursor="pointer"><FaLinkedinIn /></Icon>
-              <Icon boxSize="28px" color="white" cursor="pointer"><FaYoutube /></Icon>
+              <ChakraLink asChild>
+                <NextLink href="https://www.facebook.com/GrupoHEINEKENBr/">
+                  <Icon boxSize="28px" color="white" cursor="pointer"><FaFacebook /></Icon>
+                </NextLink>
+              </ChakraLink>
+
+              <ChakraLink asChild>
+                <NextLink href="https://www.instagram.com/grupoheinekenbr/">
+                  <Icon boxSize="28px" color="white" cursor="pointer"><FaInstagram /></Icon>
+                </NextLink>
+              </ChakraLink>
+
+              <ChakraLink asChild>
+                <NextLink href="https://www.linkedin.com/company/heineken/">
+                  <Icon boxSize="28px" color="white" cursor="pointer"><FaLinkedinIn /></Icon>
+                </NextLink>
+              </ChakraLink>
+
+              <ChakraLink asChild>
+                <NextLink href="https://www.youtube.com/GrupoHEINEKENBr">
+                  <Icon boxSize="28px" color="white" cursor="pointer"><FaYoutube /></Icon>
+                </NextLink>
+              </ChakraLink>
 
             </VStack>
           </HStack>
@@ -180,28 +200,32 @@ export default function Home() {
                   align="center"
                   justify="center"
                 >
-                  <HStack
-                    as="a"
-                    bg="rgb(32, 85, 39)"
-                    color="white"
-                    fontFamily="'HEINEKEN Core', sans-serif"
-                    fontSize="16px"
-                    fontWeight="bold"
-                    h="48px"
-                    px="16px"
-                    w="220px"
-                    justify="center"
-                    align="center"
-                    borderRadius="0"
-                    textDecoration="none"
-                    transition="all 0.15s ease-in-out"
-                    _hover={{
-                      bg: "rgb(28, 75, 34)",
-                      textDecoration: "none"
-                    }}
-                  >
-                    Confira Nossas Vagas
-                  </HStack>
+                  <ChakraLink asChild>
+                    <NextLink href="/times-de-estrelas-end/">
+                      <HStack
+                        as="a"
+                        bg="rgb(32, 85, 39)"
+                        color="white"
+                        fontFamily="'HEINEKEN Core', sans-serif"
+                        fontSize="16px"
+                        fontWeight="bold"
+                        h="48px"
+                        px="16px"
+                        w="220px"
+                        justify="center"
+                        align="center"
+                        borderRadius="0"
+                        textDecoration="none"
+                        transition="all 0.15s ease-in-out"
+                        _hover={{
+                          bg: "rgb(28, 75, 34)",
+                          textDecoration: "none"
+                        }}
+                      >
+                        Confira Nossas Vagas
+                      </HStack>
+                    </NextLink>
+                  </ChakraLink>
                 </VStack>
               </VStack>
             </VStack>
@@ -224,6 +248,6 @@ export default function Home() {
         <LuChevronUp />
         Voltar ao topo
       </Button>
-    </VStack>
+    </VStack >
   )
 }

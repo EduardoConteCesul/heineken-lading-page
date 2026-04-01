@@ -2,7 +2,7 @@ import {
   HStack,
   VStack,
   Text,
-  Link,
+  Link as ChakraLink,
   Icon,
   Image
 } from "@chakra-ui/react";
@@ -13,13 +13,15 @@ import {
   FaYoutube
 } from "react-icons/fa";
 import IconNavFooter from "./home/icon-nav-footer";
+import NextLink from "next/link";
+import TextLink from "./home/text-link";
 
 export default function Footer() {
   const logo =
     "https://www.heinekenbrasil.com.br/media/m1db2dbs/logocolorido.svg";
 
   return (
-    <VStack as="footer" mt="80px" gap={0} bgColor="white">
+    <VStack as="footer" gap={0} bgColor="white">
 
       <HStack w="100%" justify="center" px="24px" py="60px" flexDirection="column">
         <HStack
@@ -34,35 +36,65 @@ export default function Footer() {
             <Image src={logo} alt="Heineken" w="200px" />
 
             <HStack gap="12px" pt="40px" pl="20px">
-              <Icon color="#1f5c2c" boxSize={5}><FaFacebook /></Icon>
-              <Icon color="#1f5c2c" boxSize={5}><FaInstagram /></Icon>
-              <Icon color="#1f5c2c" boxSize={5}><FaLinkedinIn /></Icon>
-              <Icon color="#1f5c2c" boxSize={5}><FaYoutube /></Icon>
+              <ChakraLink asChild>
+                <NextLink href="https://www.facebook.com/GrupoHEINEKENBr/">
+                  <Icon color="#1f5c2c" boxSize={5}><FaFacebook /></Icon>
+                </NextLink>
+              </ChakraLink>
+
+              <ChakraLink asChild>
+                <NextLink href="https://www.instagram.com/grupoheinekenbr/">
+                  <Icon color="#1f5c2c" boxSize={5}><FaInstagram /></Icon>
+                </NextLink>
+              </ChakraLink>
+
+              <ChakraLink asChild>
+                <NextLink href="https://www.linkedin.com/company/heineken/">
+                  <Icon color="#1f5c2c" boxSize={5}><FaLinkedinIn /></Icon>
+                </NextLink>
+              </ChakraLink>
+
+              <ChakraLink asChild>
+                <NextLink href="https://www.youtube.com/GrupoHEINEKENBr">
+                  <Icon color="#1f5c2c" boxSize={5}><FaYoutube /></Icon>
+                </NextLink>
+              </ChakraLink>
+
             </HStack>
           </VStack>
 
           <VStack align="flex-end" gap="10px">
             <Text color="#143619" fontSize={12}>HEINEKEN BRASIL</Text>
-            <IconNavFooter text="Sobre Nós" />
-            <IconNavFooter text="Notícias" />
-            <IconNavFooter text="Sustentabilidade" />
-            <IconNavFooter text="Universidade HNK" />
+
+            <TextLink href="/sobre-nos/" text="Sobre Nós" />
+
+            <TextLink href="/noticias/" text="Notícias" />
+
+            <TextLink href="/sustentabilidade/" text="Sustentabilidade" />
+
+            <TextLink href="https://www.heinekenbrasil.com.br/" text="Universidade HNK" />
           </VStack>
 
           <VStack align="flex-end" gap="10px">
             <Text color="#143619" fontSize={12}>AJUDA</Text>
-            <IconNavFooter text="Contato" />
-            <IconNavFooter text="Time de Estrelas" />
-            <IconNavFooter text="Revender" />
-            <IconNavFooter text="Validador de Boletos" />
-            <IconNavFooter text="Sem Fake News" />
+            <TextLink href="/contato/" text="Contato" />
+
+            <TextLink href="/time-de-estrelas/" text="Time de Estrelas" />
+
+            <TextLink href="/revender/" text="Revender" />
+
+            <TextLink href="/validador-de-boletos/" text="Validador de Boletos" />
+
+            <TextLink href="/sem-fake-news/" text="Sem Fake News" />
           </VStack>
 
           <VStack align="flex-end" gap="10px">
             <Text color="#143619" fontSize={12}>POLÍTICAS</Text>
-            <IconNavFooter text="Informações Legais" />
-            <IconNavFooter text="Como fazemos negócios" />
-            <IconNavFooter text="Como fazemos negócios" />
+            <TextLink href="/informacoes-legais/" text="Informações Legais" />
+
+            <TextLink href="/como-fazemos-negocios/" text="Como fazemos negócios" />
+
+            <TextLink href="/como-fazemos-negocios/" text="Como fazemos negócios" />
           </VStack>
 
         </HStack>
