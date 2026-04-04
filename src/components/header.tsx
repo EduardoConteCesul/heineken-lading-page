@@ -28,74 +28,73 @@ export default function Header() {
       <Flex justify="center">
         <Flex
           w="100%"
-          maxW="1350px"
+          maxW="90%"
           align="center"
           justify="space-between"
-          px="24px"
-          pt="8px"
+          alignItems="center"
         >
 
           <ChakraLink asChild>
             <NextLink href="/">
-              <Image src={imageHeineken} alt="Heineken" maxW="160px" mb="8px" />
+              <Image src={imageHeineken} alt="Heineken" w="10rem" mt="0.5rem" />
             </NextLink>
           </ChakraLink>
 
-          <HStack gap="14px" mb="8px">
+          <HStack gap="1.25rem" mt="0.5rem" mr="0.5rem">
 
             <ChakraLink asChild>
               <NextLink href="https://www.facebook.com/GrupoHEINEKENBr/">
-                <Icon color="#1f5c2c" size="md"><FaFacebook /></Icon>
+                <Icon color="#1f5c2c"><FaFacebook size="1.30rem" /></Icon>
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
               <NextLink href="https://www.instagram.com/grupoheinekenbr/">
-                <Icon color="#1f5c2c" size="md"><FaInstagram /></Icon>
+                <Icon color="#1f5c2c"><FaInstagram size="1.30rem" /></Icon>
               </NextLink>
             </ChakraLink>
             <ChakraLink asChild>
               <NextLink href="https://www.linkedin.com/company/heineken/">
-                <Icon color="#1f5c2c" size="md"><FaLinkedinIn /></Icon>
+                <Icon color="#1f5c2c"><FaLinkedinIn size="1.30rem" /></Icon>
               </NextLink>
             </ChakraLink>
             <ChakraLink asChild>
               <NextLink href="https://www.youtube.com/GrupoHEINEKENBr">
-                <Icon color="#1f5c2c" size="md"><FaYoutube /></Icon>
+                <Icon color="#1f5c2c"><FaYoutube size="1.30rem" /></Icon>
               </NextLink>
             </ChakraLink>
 
             <IconButton
               aria-label="User"
-              size="sm"
               variant="outline"
               borderRadius="full"
+              size="sm"
             >
-              <FaUser />
+              <FaUser size="0.625rem" />
             </IconButton>
 
             <IconButton
               aria-label="Search"
-              size="sm"
               bg="#1f5c2c"
               color="white"
               _hover={{ bg: "#257c39" }}
+              rounded={0}
+              size="sm"
             >
-              <FaSearch />
+              <FaSearch size="0.625rem" />
             </IconButton>
           </HStack>
         </Flex>
       </Flex>
 
-      <Flex justify="center">
+      <Flex justify="center" mt="0.625rem">
         <Flex
           w="100%"
-          maxW="1350px"
-          align="center"
-          px="24px"
+          maxW="90%"
+          pl="0.75rem"
         >
           <HStack
-            gap="28px"
+            gap="1.75rem"
             fontSize="14px"
             color="#1f5c2c"
             fontWeight="500"
@@ -157,6 +156,6 @@ export default function Header() {
           </HStack>
         </Flex>
       </Flex>
-    </Box>
+    </Box >
   );
 }

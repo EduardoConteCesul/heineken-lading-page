@@ -1,4 +1,4 @@
-import { Link } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 interface IconProps {
   text: string
@@ -6,6 +6,8 @@ interface IconProps {
 
 export default function IconNavHeader({ text }: IconProps){
   return(
-    <Link color="#205527" fontSize="md" fontWeight="medium">{text}</Link>
+    <Text color="#205527" fontSize="sm" fontWeight="medium" textStyle="heineken">
+      {text}
+    </Text>
   )
 }
