@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Image as ChakraImage, HStack, Icon, Link as ChakraLink, Text, VStack, Box } from "@chakra-ui/react";
+import { Button, Image as ChakraImage, HStack, Icon, Link as ChakraLink, Text, VStack, Box, Carousel, Image } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 import bannerFooter from "../../public/assets/bannerFooter.jpeg";
@@ -14,11 +14,85 @@ import NextLink from "next/link";
 
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
+type ListItems = {
+  index: number,
+  img: string,
+  title: string,
+  description: string,
+  linkSaibaMais: string
+}
+
 export default function Home() {
+
+  const items: ListItems[] = [
+    { index: 1, img: "assets/banner1.png", title: "Nossas marcas", description: "Acreditamos que os melhores momentos são aqueles compartilhados. Por isso, nos dedicamos a proporcionar experiências incríveis.", linkSaibaMais: "/nossas-marcas-end/"},
+    { index: 2, img: "assets/banner2.png", title: "Gente feliz brinda mais", description: "Acreditamos que a felicidade é essencial para construir um ambiente de trabalho excepcional.", linkSaibaMais: "/gente-feliz-brinda-mais/"},
+    { index: 3, img: "assets/banner3.png", title: "Time de Estrelas", description: "Valorizamos a diversidade e sabemos que um time formado por pessoas diversas nos torna tão únicos quanto as nossas marcas.", linkSaibaMais: "/time-de-estrelas-end/"}
+  ];
 
   return (
     <VStack as="main" minH="100vh" gap={0} >
       <VStack gap={0} position="relative">
+        <Box w="100%">
+          <Carousel.Root
+            autoplay={{ delay: 2000 }}
+            slideCount={items.length}
+          >
+            <Carousel.ItemGroup>
+              {items.map((item, index) => (
+                <Carousel.Item key={index} index={index}>
+                  <Box w="100%" h="700px" position="relative">
+
+                    <Image
+                      src={item.img}
+                      w="100%"
+                      h="100%"
+                      objectFit="cover"
+                    />
+
+                    <Text
+                      position="absolute"
+                      top="50%"
+                      color="white"
+                      fontSize="4xl"
+                      left="103px"
+                      fontWeight="bold"
+                    >
+                      {item.title}
+                    </Text>
+
+                    <Text
+                      position="absolute"
+                      top="58%"
+                      left="103px"
+                      color="white"
+                      fontSize="lg"
+                      maxW="500px"
+                      fontWeight="bold"
+                    >
+                      {item.description}
+                    </Text>
+                    <Button
+                      position="absolute"
+                      top="72%"
+                      left="103px"
+                      rounded={0}
+                      bgColor="#205527"
+                      color="white"
+                      fontWeight="bold"
+                      w="100px"
+                      h="50px"
+                    >
+                      <a href={item.linkSaibaMais}>Saiba mais</a>
+                    </Button>
+
+                  </Box>
+                </Carousel.Item>
+              ))}
+            </Carousel.ItemGroup>
+          </Carousel.Root>
+        </Box>
+
         <VStack as="section" w="100%" gap={0}>
           <HStack
             w="100%"
