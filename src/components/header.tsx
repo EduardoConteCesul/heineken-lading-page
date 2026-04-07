@@ -23,7 +23,7 @@ export default function Header() {
     "https://www.heinekenbrasil.com.br/media/m1db2dbs/logocolorido.svg";
 
   return (
-    <Box as="header" w="100%" bg="white">
+    <Box as="header" w="100%" bg="white" position="fixed" zIndex="1000">
 
       <Flex justify="center">
         <Flex
