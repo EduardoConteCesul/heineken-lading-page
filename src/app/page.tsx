@@ -100,7 +100,7 @@ export default function Home() {
 				</Box>
 
 				<Box as="section" w="100%" h="700px" bgColor="white" alignContent="center">
-					<Box>
+					<Box ml="10rem" mr="10rem">
 						<Carousel.Root
 							autoplay={{ delay: 5000 }}
 							slideCount={itemsCarroselDois.length}
@@ -108,18 +108,20 @@ export default function Home() {
 							<Carousel.ItemGroup>
 								{itemsCarroselDois.map((item, index) => (
 									<Carousel.Item key={index} index={index}>
-										<Box alignContent="center">
-											<HStack ml="10rem" gap={0}>
+										<Box alignContent="center" w="100%" h="100%">
+											<HStack gap={0} w="100%" h="100%">
 												<Image
 													src={item.img}
 													w="480px"
 													h="350px"
 												/>
 												<Box
-													flex="1"
-													display="flex"
 													flexDirection="column"
 													textAlign="left"
+													alignContent="center"
+													w="100%"
+													h="100%"
+													ml="7rem"
 												>
 													<Text
 														color="#205527"
