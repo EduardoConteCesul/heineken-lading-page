@@ -4,9 +4,9 @@ interface IconProps {
   text: string
 }
 
-export default function IconNavHeader({ text }: IconProps){
-  return(
-    <Text color="#205527" fontSize="sm" fontWeight="medium" textStyle="heineken">
+export default function IconNavHeader({ text }: IconProps) {
+  return (
+    <Text color="header.iconsHeader" fontSize="sm" fontWeight="medium">
       {text}
     </Text>
   )

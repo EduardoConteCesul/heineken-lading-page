@@ -23,11 +23,11 @@ export default function Header() {
     "https://www.heinekenbrasil.com.br/media/m1db2dbs/logocolorido.svg";
 
   return (
-    <Box as="header" w="100%" bg="white" position="fixed" zIndex="1000">
+    <Box as="header" w="full" bg="white" position="fixed" zIndex="dropdown">
 
       <Flex justify="center">
         <Flex
-          w="100%"
+          w="full"
           maxW="90%"
           align="center"
           justify="space-between"
@@ -36,31 +36,31 @@ export default function Header() {
 
           <ChakraLink asChild>
             <NextLink href="/">
-              <Image src={imageHeineken} alt="Heineken" w="10rem" mt="0.5rem" />
+              <Image src={imageHeineken} alt="Logo da Heineken" w={40} mt={2} />
             </NextLink>
           </ChakraLink>
 
-          <HStack gap="1.25rem" mt="0.5rem" mr="0.5rem">
+          <HStack gap={5} mt={2} mr={2}>
 
             <ChakraLink asChild>
               <NextLink href="https://www.facebook.com/GrupoHEINEKENBr/">
-                <Icon color="#1f5c2c"><FaFacebook size="1.30rem" /></Icon>
+                <Icon color="header.iconsHeader"><FaFacebook size="1.30rem" /></Icon>
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
               <NextLink href="https://www.instagram.com/grupoheinekenbr/">
-                <Icon color="#1f5c2c"><FaInstagram size="1.30rem" /></Icon>
+                <Icon color="header.iconsHeader"><FaInstagram size="1.30rem" /></Icon>
               </NextLink>
             </ChakraLink>
             <ChakraLink asChild>
               <NextLink href="https://www.linkedin.com/company/heineken/">
-                <Icon color="#1f5c2c"><FaLinkedinIn size="1.30rem" /></Icon>
+                <Icon color="header.iconsHeader"><FaLinkedinIn size="1.30rem" /></Icon>
               </NextLink>
             </ChakraLink>
             <ChakraLink asChild>
               <NextLink href="https://www.youtube.com/GrupoHEINEKENBr">
-                <Icon color="#1f5c2c"><FaYoutube size="1.30rem" /></Icon>
+                <Icon color="header.iconsHeader"><FaYoutube size="1.30rem" /></Icon>
               </NextLink>
             </ChakraLink>
 
@@ -70,87 +70,84 @@ export default function Header() {
               borderRadius="full"
               size="sm"
             >
-              <FaUser size="0.625rem" />
+              <FaUser size={2.5} />
             </IconButton>
 
             <IconButton
               aria-label="Search"
-              bg="#1f5c2c"
+              bg="header.iconsHeader"
               color="white"
-              _hover={{ bg: "#257c39" }}
+              _hover={{ bg: "header.hoverIconsHeader" }}
               rounded={0}
               size="sm"
             >
-              <FaSearch size="0.625rem" />
+              <FaSearch size={2.5} />
             </IconButton>
           </HStack>
         </Flex>
       </Flex>
 
-      <Flex justify="center" mt="0.625rem">
+      <Flex justify="center" mt={2.5}>
         <Flex
-          w="100%"
+          w="full"
           maxW="90%"
-          pl="0.75rem"
+          pl={3}
         >
           <HStack
-            gap="1.75rem"
-            fontSize="14px"
-            color="#1f5c2c"
-            fontWeight="500"
-            p="8px"
+            gap={7}
+            p={2}
           >
             <ChakraLink asChild>
-              <NextLink href="/sobre-nos/">
+              <NextLink href="/sobre-nos">
                 <IconNavHeader text="Sobre nós" />
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
-              <NextLink href="/time-de-estrelas/">
+              <NextLink href="/time-de-estrelas">
                 <IconNavHeader text="Time de Estrelas" />
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
-              <NextLink href="/esg/">
+              <NextLink href="/esg">
                 <IconNavHeader text="ESG" />
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
-              <NextLink href="/pega-leve/">
+              <NextLink href="/pega-leve">
                 <IconNavHeader text="Pega Leve" />
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
-              <NextLink href="/heineken-spin/">
+              <NextLink href="/heineken-spin">
                 <IconNavHeader text="Spin" />
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
-              <NextLink href="/inside-the-star/">
+              <NextLink href="/inside-the-star">
                 <IconNavHeader text="Inside the Star" />
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
-              <NextLink href="/noticias/">
+              <NextLink href="/noticias">
                 <IconNavHeader text="Notícias" />
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
-              <NextLink href="https://www.heinekenbrasil.com.br/">
+              <NextLink href="https://www.heinekenbrasil.com.br">
                 <IconNavHeader text="Universidade HNK" />
               </NextLink>
             </ChakraLink>
 
             <ChakraLink asChild>
-              <NextLink href="/contato/">
-                <IconNavHeader text="Fale conosco" />
+              <NextLink href="/contato">
+                <IconNavHeader text="Fale conosco"/>
               </NextLink>
             </ChakraLink>
           </HStack>

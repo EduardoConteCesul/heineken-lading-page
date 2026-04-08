@@ -1,13 +1,16 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
-const config = defineConfig({
+const customConfig = defineConfig({
   theme: {
     tokens: {
-      fonts: {
-        heineken: { value: "HEINEKEN Core', sans-serif" },
-      },
+      colors: {
+        header: {
+          iconsHeader: { value: "#1f5c2c"},
+          hoverIconsHeader: { value: "#257c39"}
+        }
+      }
     },
   }
 });
 
-export const system = createSystem(defaultConfig, config);
+export const system = createSystem(defaultConfig, customConfig);
